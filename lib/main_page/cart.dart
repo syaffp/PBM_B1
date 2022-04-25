@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbm_b1/main_page/profile.dart';
 
 class Cart extends StatefulWidget {
   const Cart({Key? key}) : super(key: key);
@@ -193,8 +194,8 @@ class _CartState extends State<Cart> {
                 ),
                 child: const Text('Lanjut pembayaran'),
                 onPressed: () {
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => Profile()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Profile()));
                 },
               ),
             ),

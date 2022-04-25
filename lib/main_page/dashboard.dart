@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pbm_b1/main_page/camera.dart';
+import 'package:pbm_b1/main_page/profile.dart';
 
 class Dasboard extends StatefulWidget {
   const Dasboard({Key? key}) : super(key: key);
@@ -151,11 +153,11 @@ class _DasboardState extends State<Dasboard> {
                                     width: 100,
                                   ),
                                   onTap: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) => Camera()),
-                                    // );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Camera()),
+                                    );
                                   },
                                 ),
                                 SizedBox(
@@ -185,11 +187,11 @@ class _DasboardState extends State<Dasboard> {
                                     width: 100,
                                   ),
                                   onTap: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) => Camera()),
-                                    // );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Camera()),
+                                    );
                                   },
                                 ),
                                 SizedBox(
@@ -223,11 +225,11 @@ class _DasboardState extends State<Dasboard> {
                                     width: 100,
                                   ),
                                   onTap: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) => Camera()),
-                                    // );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Camera()),
+                                    );
                                   },
                                 ),
                                 SizedBox(
@@ -257,11 +259,11 @@ class _DasboardState extends State<Dasboard> {
                                     width: 100,
                                   ),
                                   onTap: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) => Camera()),
-                                    // );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Camera()),
+                                    );
                                   },
                                 ),
                                 SizedBox(
