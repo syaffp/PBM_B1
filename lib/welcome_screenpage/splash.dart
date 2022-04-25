@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbm_b1/welcome_screenpage/login.dart';
 
-
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,8 +26,8 @@ class Splash extends StatelessWidget {
                     children: <Widget>[
                       Image.asset(
                         'assets/icons/photo.png',
-                        width: 100,
-                        height: 100,
+                        width: 50,
+                        height: 50,
                       ),
                       SizedBox(
                         width: 30,

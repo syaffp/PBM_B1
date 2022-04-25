@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:pbm_b1/main_page/bottomNavigate.dart';
+import 'package:pbm_b1/main_page/bottomNavigate.dart';
 import 'package:pbm_b1/welcome_screenpage/register.dart';
 
 class LoginPage extends StatefulWidget {
@@ -94,19 +94,19 @@ class _LoginPageState extends State<LoginPage> {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                // ElevatedButton(
-                                //   style: ElevatedButton.styleFrom(
-                                //     minimumSize: const Size.fromHeight(50),
-                                //   ),
-                                //   child: Text('Login'),
-                                //   onPressed: () {
-                                //     Navigator.pushReplacement(
-                                //         context,
-                                //         MaterialPageRoute(
-                                //             builder: (context) =>
-                                //                 BottomNavigate()));
-                                //   },
-                                // ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    minimumSize: const Size.fromHeight(50),
+                                  ),
+                                  child: Text('Login'),
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                BottomNavigate()));
+                                  },
+                                ),
                                 SizedBox(
                                   height: 20,
                                 ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:pbm_b1/main_page/camera.dart';
-// import 'package:pbm_b1/main_page/profile.dart';
-// import 'package:pbm_b1/main_page/dashboard.dart';
+import 'package:pbm_b1/main_page/profile.dart';
+import 'package:pbm_b1/main_page/dashboard.dart';
 import 'package:pbm_b1/main_page/history.dart';
 import 'package:pbm_b1/main_page/cart.dart';
-// import 'package:pbm_b1/main_page/profile.dart';
+import 'package:pbm_b1/main_page/profile.dart';
 
 class BottomNavigate extends StatefulWidget {
   const BottomNavigate({Key? key}) : super(key: key);
@@ -15,14 +15,16 @@ class BottomNavigate extends StatefulWidget {
 }
 
 class _BottomNavigateState extends State<BottomNavigate> {
+  // inisialisasi awal
   int currentIndex = 0;
   // ngambil btn
   final screens = [
-    // Dashboard(),
+    Dasboard(),
     History(),
     Cart(),
-    // Profile(),
+    Profile(),
   ];
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -30,7 +32,9 @@ class _BottomNavigateState extends State<BottomNavigate> {
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,
+          // u/ ngklik
           onTap: (index) => setState(() => currentIndex = index),
+          // membuat item menu (urut)
           items: [
             BottomNavigationBarItem(
               icon: Image.asset(
