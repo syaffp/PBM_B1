@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pbm_b1/welcome_screenpage/login.dart';
 
+// statelessWidget : nilainya tidak bisa diubah
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // // Scaffold: widget utama untuk membuat sebuah halaman pada flutter
     return Scaffold(
       body: Container(
         child: Stack(

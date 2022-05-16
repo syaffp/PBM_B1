@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pbm_b1/welcome_screenpage/splash.dart';
+import 'package:pbm_b1/welcome_screenpage/splash.dart'; 
 import 'package:flutter/services.dart';
 
+// fungsi yg pertama kali dijlnkan
 void main() {
   runApp(const MyApp());
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

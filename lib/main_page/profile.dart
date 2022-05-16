@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// statefulWidget : dapat berubah
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -10,7 +11,9 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
+    // Scaffold: widget utama untuk membuat sebuah halaman pada flutter
     return Scaffold(
+      // appBar : menampilkan title dr aplikasi
       appBar: AppBar(
         elevation: 0.0,
         shadowColor: Colors.transparent,
@@ -18,6 +21,7 @@ class _ProfileState extends State<Profile> {
         title: const Text("Profile"),
       ),
       backgroundColor: const Color(0xfff1f5f9),
+      // body: u/ content dr program
       body: SafeArea(
           child: Column(
         children: [
@@ -31,6 +35,7 @@ class _ProfileState extends State<Profile> {
                 const SizedBox(
                   height: 20,
                 ),
+                // row: horizontal
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -46,6 +51,7 @@ class _ProfileState extends State<Profile> {
                         const SizedBox(
                           width: 8,
                         ),
+                        // column : vertikal
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pbm_b1/main_page/rentMore.dart';
 
+// statefulWidget : dapat berubah
 class Rent extends StatefulWidget {
   const Rent({Key? key}) : super(key: key);
 
@@ -11,6 +12,7 @@ class Rent extends StatefulWidget {
 class _RentState extends State<Rent> {
   @override
   Widget build(BuildContext context) {
+    // Scaffold: widget utama untuk membuat sebuah halaman pada flutter
     return Scaffold(
       body: Container(
         child: Stack(
