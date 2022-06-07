@@ -1,0 +1,39 @@
+{
+    "project_info": {
+      "project_number": "159759064478",
+      "project_id": "auth-d39e7",
+      "storage_bucket": "auth-d39e7.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:159759064478:android:e028a45445530a9d4fca8f",
+          "android_client_info": {
+            "package_name": "com.example.shutter_cam"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "159759064478-k81bth23gmb7ujkklvld829vep18ql4m.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyDP46ipNyF50fHJh1AWdmY3o1268KllNRg"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "159759064478-k81bth23gmb7ujkklvld829vep18ql4m.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  } 

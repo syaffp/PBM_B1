@@ -1,4 +1,4 @@
-package com.example.pbm_b1
+package com.example.shutter_cam
 
 import io.flutter.embedding.android.FlutterActivity
 

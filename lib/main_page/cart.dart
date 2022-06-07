@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbm_b1/main_page/arrangeRental.dart';
 import 'package:pbm_b1/main_page/profile.dart';
 import 'package:pbm_b1/main_page/setAddress.dart';
 
@@ -196,7 +197,7 @@ class _CartState extends State<Cart> {
                 child: const Text('Lanjut pembayaran'),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SetAddres()));
+                      MaterialPageRoute(builder: (context) => ArrangeRental()));
                 },
               ),
             ),

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pbm_b1">
+    package="com.example.shutter_cam">
    <application
         android:label="pbm_b1"
         android:name="${applicationName}"
