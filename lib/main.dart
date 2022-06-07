@@ -3,6 +3,7 @@ import 'package:pbm_b1/main_page/bottomNavigate.dart';
 import 'package:pbm_b1/main_page/setAddress.dart';
 import 'package:flutter/services.dart';
 import 'package:pbm_b1/welcome_screenpage/splash.dart'; 
+import 'package:pbm_b1/main_page/memberV1.dart';
 
 // fungsi yg pertama kali dijlnkan
 void main() {
