@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'memberV1.dart';
+
 // statefulWidget : dapat berubah
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -111,27 +113,36 @@ class _ProfileState extends State<Profile> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Container(
-                            child: Image.asset(
-                              'assets/icons/medal.png',
-                              height: 30.0,
-                              width: 30.0,
-                              fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MemberV1()),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Container(
+                              child: Image.asset(
+                                'assets/icons/medal.png',
+                                height: 30.0,
+                                width: 30.0,
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Text(
-                            "Verified Your Member",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
+                            const SizedBox(
+                              width: 10,
                             ),
-                          ),
-                        ],
+                            const Text(
+                              "Verified Your Member",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       Image.asset(
                         'assets/icons/right-chevron.png',
