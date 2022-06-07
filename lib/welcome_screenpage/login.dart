@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbm_b1/main_page/bottomNavigate.dart';
+import 'package:pbm_b1/services/authService.dart';
 import 'package:pbm_b1/welcome_screenpage/register.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,15 +11,16 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // controller
+  TextEditingController emailController = TextEditingController(text: "");
+  TextEditingController passwordController = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         child: Stack(
-          // nambahin byk widget
-          children: [ 
+          children: [
             SingleChildScrollView(
-              // container:modif
               child: Container(
                 // we will give media query height
                 // double.infinity make it big as my parent allows
@@ -26,16 +28,16 @@ class _LoginPageState extends State<LoginPage> {
 
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                color: Color.fromRGBO(76, 219, 196, 1),
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                color: const Color.fromRGBO(76, 219, 196, 1),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        // up images
                         Image.asset(
                           'assets/icons/photo.png',
                           width: 100,
@@ -43,32 +45,31 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ],
                     ),
-
                     Container(
-                      margin: EdgeInsets.only(top: 50),
+                      margin: const EdgeInsets.only(top: 50),
                       child: Column(
                         children: <Widget>[
-                          Text(
+                          const Text(
                             "selamat datang",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Text(
+                          const Text(
                             "Silahkan masukkan email dan password akun anda",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
                             textAlign: TextAlign.center,
                           ),
-                          
                           Container(
-                            margin: EdgeInsets.only(top: 20),
+                            margin: const EdgeInsets.only(top: 20),
                             child: Column(
                               children: <Widget>[
-                                // form
                                 TextFormField(
+                                  // menghubungkan email dengan controller
+                                  controller: emailController,
                                   decoration: const InputDecoration(
                                     floatingLabelBehavior:
                                         FloatingLabelBehavior.never,
@@ -78,10 +79,11 @@ class _LoginPageState extends State<LoginPage> {
                                     labelText: 'Email',
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 TextFormField(
+                                  controller: passwordController,
                                   decoration: const InputDecoration(
                                     floatingLabelBehavior:
                                         FloatingLabelBehavior.never,
@@ -91,26 +93,29 @@ class _LoginPageState extends State<LoginPage> {
                                     labelText: 'Password',
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     minimumSize: const Size.fromHeight(50),
                                   ),
-                                  child: Text('Login'),
-                                  onPressed: () {
+                                  child: const Text('Login'),
+                                  onPressed: () async {
+                                    await AuthServices.signIn(
+                                        emailController.text,
+                                        passwordController.text);
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                BottomNavigate()));
+                                                const BottomNavigate()));
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
-                                Row(children: <Widget>[
+                                Row(children: const <Widget>[
                                   Expanded(
                                       child: Divider(
                                     color: Colors.black,
@@ -127,26 +132,23 @@ class _LoginPageState extends State<LoginPage> {
                                     color: Colors.black,
                                   )),
                                 ]),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Belum memiliki akun ?",
                                     ),
-                                    // link text
                                     InkWell(
-                                      child: Text(
+                                      child: const Text(
                                         "Daftar disini",
                                         style: TextStyle(
                                           color:
                                               Color.fromRGBO(225, 208, 91, 1),
                                         ),
                                       ),
-                                      // pindah page
                                       onTap: () {
                                         Navigator.push(
                                           context,

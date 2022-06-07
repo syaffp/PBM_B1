@@ -1,11 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:pbm_b1/welcome_screenpage/login.dart';
 
-// statelessWidget : nilainya tidak bisa diubah
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // // Scaffold: widget utama untuk membuat sebuah halaman pada flutter
+    User? user = Provider.of<User?>(context);
+
     return Scaffold(
       body: Container(
         child: Stack(
@@ -17,24 +19,24 @@ class Splash extends StatelessWidget {
 
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              color: Color.fromRGBO(76, 219, 196, 1),
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+              color: const Color.fromRGBO(76, 219, 196, 1),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Image.asset(
                         'assets/icons/photo.png',
-                        width: 50,
-                        height: 50,
+                        width: 100,
+                        height: 100,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
-                      Text(
+                      const Text(
                         "Shutter.cam",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 30),
@@ -43,7 +45,7 @@ class Splash extends StatelessWidget {
                   ),
                   Center(
                     child: Container(
-                      margin: EdgeInsets.only(top: 110),
+                      margin: const EdgeInsets.only(top: 110),
                       child: Image.asset(
                         "assets/backgrounds/welcom.png",
                         height: 300,
@@ -59,22 +61,21 @@ class Splash extends StatelessWidget {
                 height: 100,
                 color: Colors.white,
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromRGBO(76, 219, 196, 1),
+                    primary: const Color.fromRGBO(76, 219, 196, 1),
                     // minimumSize: const Size.fromHeight(
                     //     50), // fromHeight use double.infinity as width and 40 is the height
                   ),
-                  child: Text('Ayo Mulai!',
+                  child: const Text('Ayo Mulai!',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-                  // Properti u/ ngeklik sesuatu
                   onPressed: () {
-                    // navigasi
-                    Navigator.pushReplacement(context, 
-                        // manggil 
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
                   },
                 ),
               ),
