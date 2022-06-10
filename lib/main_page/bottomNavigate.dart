@@ -19,7 +19,7 @@ class _BottomNavigateState extends State<BottomNavigate> {
   int currentIndex = 0;
   // ngambil btn
   final screens = [
-    Dasboard(),
+    Dashboard(),
     History(),
     Cart(),
     Profile(),

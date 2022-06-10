@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pbm_b1/main_page/bottomNavigate.dart';
-import 'package:pbm_b1/main_page/setAddress.dart';
+import 'package:provider/provider.dart';
+import 'package:pbm_b1/services/authService.dart';
+import 'package:pbm_b1/welcome_screenpage/splash.dart';
+// import 'package:shutter_cam/main_page/arrangeRental.dart';
 import 'package:flutter/services.dart';
-import 'package:pbm_b1/welcome_screenpage/splash.dart'; 
-import 'package:pbm_b1/main_page/memberV1.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-// fungsi yg pertama kali dijlnkan
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Color(0xFF4CDBC4),
@@ -18,9 +20,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Splash(),
+    return StreamProvider.value(
+      // konek ke firebase userstream
+      value: AuthServices.userStream, initialData: null,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Splash(),
+      ),
     );
   }
 }

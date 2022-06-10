@@ -1,15 +1,26 @@
+// ignore_for_file: non_constant_identifier_names
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pbm_b1/main_page/camera.dart';
-import 'package:pbm_b1/main_page/profile.dart';
+import 'package:pbm_b1/services/authService.dart';
+import 'package:pbm_b1/services/databaseService.dart';
 
-class Dasboard extends StatefulWidget {
-  const Dasboard({Key? key}) : super(key: key);
+class Dashboard extends StatefulWidget {
+  const Dashboard({Key? key}) : super(key: key);
 
   @override
-  State<Dasboard> createState() => _DasboardState();
+  State<Dashboard> createState() => _DashboardState();
 }
 
-class _DasboardState extends State<Dasboard> {
+class _DashboardState extends State<Dashboard> {
+  int currentIndex = 0;
+  var user = FirebaseAuth.instance.currentUser;
+
+  late String userMail;
+  late String userId;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,13 +71,20 @@ class _DasboardState extends State<Dasboard> {
                         ),
                         Row(
                           children: [
-                            const Text(
-                              "User123",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
+                            GestureDetector(
+                              child: Text(
+                                '${FirebaseAuth.instance.currentUser!.email}',
+                                // userId = user!.uid,
+                                // userMail = user.email,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
+                              onTap: () async {
+                                await AuthServices.signOut();
+                              },
                             ),
                             const SizedBox(
                               width: 5,
@@ -104,10 +122,10 @@ class _DasboardState extends State<Dasboard> {
                                 const SizedBox(
                                   width: 10,
                                 ),
-                                Flexible(
-                                  child: Container(
+                                const Flexible(
+                                  child: SizedBox(
                                     height: 30,
-                                    child: const TextField(
+                                    child: TextField(
                                       enableSuggestions: false,
                                       autofocus: false,
                                       autocorrect: false,
@@ -156,20 +174,20 @@ class _DasboardState extends State<Dasboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Camera()),
+                                          builder: (context) => const Camera()),
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text("Kamera"),
+                                const Text("Kamera"),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Expanded(
@@ -190,14 +208,14 @@ class _DasboardState extends State<Dasboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Camera()),
+                                          builder: (context) => const Camera()),
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text("Drone"),
+                                const Text("Drone"),
                               ],
                             ),
                           ),
@@ -205,7 +223,7 @@ class _DasboardState extends State<Dasboard> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -228,20 +246,20 @@ class _DasboardState extends State<Dasboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Camera()),
+                                          builder: (context) => const Camera()),
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text("Flash"),
+                                const Text("Flash"),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Expanded(
@@ -262,14 +280,14 @@ class _DasboardState extends State<Dasboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Camera()),
+                                          builder: (context) => const Camera()),
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text("Tripod"),
+                                const Text("Tripod"),
                               ],
                             ),
                           ),
